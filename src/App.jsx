@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './App.css';
 import LoginForm from './Components/pages/Login';
 import UpperNavbar from './Components/navbar/UpperNavbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import RegisterForm from './Components/pages/Register';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

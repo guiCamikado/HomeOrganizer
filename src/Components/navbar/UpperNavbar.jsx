@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 function MyNavbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [tabItens, setTabItens] = useState(["Home", "Login"])
 
   return (
     <>
@@ -16,8 +17,15 @@ function MyNavbar() {
 
               {/* Menu desktop */}
               <div className="hidden md:flex space-x-4">
-                <a href="#home" className="text-white hover:text-gray-300">Home</a>
-                <a href="#login" className="text-white hover:text-gray-300">Login</a>
+                {tabItens.map((item) => (
+                  <a
+                    key={item}
+                    href={'#' + item}
+                    className='text-white hover:text-gray-950 no-underline'
+                  >
+                    {item}
+                  </a>
+                ))}
               </div>
 
               {/* Toggle mobile */}
