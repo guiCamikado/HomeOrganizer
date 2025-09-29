@@ -1,9 +1,15 @@
+// JS classes and Archives
 import { useState } from 'react';
-import './App.css';
-import LoginForm from './Components/pages/Login';
-import UpperNavbar from './Components/navbar/UpperNavbar';
-import RegisterForm from './Components/pages/Register';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+
+// Components
+  // navbar
+  import UpperNavbar from './Components/navbar/UpperNavbar';
+
+  //pages
+  import LoginForm from './Components/pages/Login';
+  import RegisterForm from './Components/pages/Register';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,10 +23,6 @@ function App() {
           <Route path="/register" element={<RegisterForm />} />
         </Routes>
       </Router>
-
-      {/* <UpperNavbar></UpperNavbar>
-      <RegisterForm></RegisterForm>
-      <LoginForm></LoginForm> */}
     </>
   )
 }

@@ -4,31 +4,37 @@ function MyNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [tabItens, setTabItens] = useState(["Home", "Login"])
 
+  // WIP necessity of doing an conditional here to increase or decrease menu states IF AN FETCH APPROVES CONNECTION
+
   return (
     <>
       <div>
-        <nav className="bg-slate-950 w-full top-0 z-50 shadow">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="bg-stone-950 w-full top-0 z-50">
+          <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-between h-16">
-              {/* Logo / Brand */}
-              <div className="flex-shrink-0 text-white font-bold text-xl">
+              
+                {/* Logo / Brand */}
+              <div className="flex-shrink-0 text-white font-bold text-2xl ">
                 <a href="#">Homepage</a>
               </div>
 
               {/* Menu desktop */}
               <div className="hidden md:flex space-x-4">
-                {tabItens.map((item) => (
-                  <a
-                    key={item}
-                    href={'#' + item}
-                    className='text-white hover:text-gray-950 no-underline'
-                  >
-                    {item}
-                  </a>
-                ))}
+                {
+                  tabItens.map((item) => (
+                    <a
+                      key={item}
+                      href={'#' + item}
+                      className='text-white hover:text-gray-900 no-underline'
+                    >
+                      {item}
+                    </a>
+                  )
+                  )
+                }
               </div>
 
-              {/* Toggle mobile */}
+              {/* mobile Toggle */}
               <div className="md:hidden">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
@@ -48,11 +54,21 @@ function MyNavbar() {
             </div>
           </div>
 
-          {/* Menu mobile */}
+          {/* Mobile menu */}
           {isOpen && (
-            <div className="md:hidden px-2 pt-2 pb-3 space-y-1 bg-slate-900">
-              <a href="#home" className="block text-white hover:text-gray-300">Home</a>
-              <a href="#login" className="block text-white hover:text-gray-300">Login</a>
+            <div className="md:hidden bg-stone-900">
+              {
+                tabItens.map((item) => (
+                  <a
+                    key={item}
+                    href={'#' + item}
+                    className='block text-white hover:text-gray-950 no-underline'
+                  >
+                    {item}
+                  </a>
+                )
+                )
+              }
             </div>
           )}
         </nav>
