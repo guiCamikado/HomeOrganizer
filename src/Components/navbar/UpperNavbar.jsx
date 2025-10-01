@@ -9,7 +9,7 @@ function UpperNavbar() {
   return (
     <>
       <div>
-        <nav className="bg-stone-950 w-full top-0 z-50">
+        <nav className="bg-stone-900 w-full top-0 z-50">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center h-16">
 

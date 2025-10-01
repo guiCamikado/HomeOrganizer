@@ -6,9 +6,10 @@ function DefaultBackground({}) {
     // Use useEffect para reagir à mudança de toggleVisibility
     return (
         <>
-            <div className='bg-gradient-to-r from-gray-400 via-indigo-900 to-blue-950 min-h-screen'>
-                
-            </div>
+  {/* Gradiente 3 */}
+  <div className="bg-gradient-to-r from-black via-gray-900 to-gray-700 h-screen flex items-center justify-center text-white">
+  </div>
+
         </>
     );
 }
