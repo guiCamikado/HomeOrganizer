@@ -7,7 +7,7 @@ function RegisterForm() {
             <div className="d-flex justify-content-center bg-gray-700 p-10">
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="email" placeholder="Digite um usuário" />
+                        <Form.Control type="text" placeholder="Digite um usuário" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Control type="password" placeholder="Defina uma senha" />

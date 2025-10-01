@@ -28,7 +28,7 @@ function LoginCard() {
                     </div>
                 </Form>
 
-                <a href="#register" className='hover:text-blue-400 underline'>Não possuí conta?</a>
+                Não possuí conta? <a href="#register" className='hover:text-blue-400 underline'>Clique Aqui!</a>
             </div>
         </>
     );

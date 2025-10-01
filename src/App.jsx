@@ -8,19 +8,19 @@ import UpperNavbar from './Components/navbar/UpperNavbar';
 import DefaultBackground from './Components/background/DefaultBackground';
 
 //pages
-import RegisterForm from './Components/pages/Register';
+import RegisterCard from './Components/registerCard/RegisterCard';
 
 function App() {
   return (
-    <>
+    <div className='min-h-screen w-screen bg-gradient-to-r from-black via-gray-900 to-gray-700'>
       <Router>
         <UpperNavbar />
+          {/* <RegisterCard></RegisterCard> */}
         <Routes>
-          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/register" element={<RegisterCard />} />
         </Routes>
       </Router>
-      <DefaultBackground></DefaultBackground>
-    </>
+    </div>
   )
 }
 
