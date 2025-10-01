@@ -8,7 +8,7 @@ import UpperNavbar from './Components/navbar/UpperNavbar';
 import DefaultBackground from './Components/background/DefaultBackground';
 
 //pages
-import RegisterCard from './Components/registerCard/RegisterCard';
+import RegisterCard from './Components/cards/registerCard/RegisterCard';
 
 function App() {
   return (

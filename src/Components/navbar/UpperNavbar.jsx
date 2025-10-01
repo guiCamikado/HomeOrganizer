@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import LoginCard from '../loginCard/LoginCard';
+import LoginCard from '../cards/loginCard/LoginCard';
 
 function UpperNavbar() {
   const [isOpen, setIsOpen] = useState(false);

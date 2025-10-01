@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import LoginWithGoogle from '../buttons/LoginWithGoogleButton';
+import LoginWithGoogle from "../../buttons/LoginWithGoogleButton"
 
 function RegisterCard() {
     return(
