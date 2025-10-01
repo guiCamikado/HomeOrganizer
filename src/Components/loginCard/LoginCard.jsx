@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import LoginWithGoogle from '../buttons/LoginWithGoogleButton';
 
-function LoginCard({ }) {
+function LoginCard() {
     // Use useEffect para reagir à mudança de toggleVisibility
     return (
         <>
