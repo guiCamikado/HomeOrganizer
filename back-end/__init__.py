@@ -1,10 +1,6 @@
 import subprocess
 import sys
 
-import sqlite3 as sqlite
-import Flask
-from sqlite.crud import Sql_Users as sql
-
 def installPackages():
     packageName = [
         "flask",
@@ -17,9 +13,18 @@ def installPackages():
             print("Erro instalando o pacote " + packageName + ": " + e)
 installPackages()
 
+import sqlite3 as sqlite
+from flask import Flask
+from db_handler import Sql_Users
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
+
+app.register_blueprint(Sql_Users)
+
+# Inicia Flask
+if __name__ == "__main__":
+    app.run(debug=True)
