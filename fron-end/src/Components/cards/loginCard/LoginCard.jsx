@@ -2,6 +2,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import LoginWithGoogle from '../../buttons/LoginWithGoogleButton';
+import "./LoginCard.css"
 
 function LoginCard() {
     // Use useEffect para reagir à mudança de toggleVisibility

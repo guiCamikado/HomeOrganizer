@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+
+/* Previne alterações do navegador no momento de autofill de login e outros formulários  */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset; /* bg-white/5 */
+  -webkit-text-fill-color: rgba(255, 255, 255, 1); /* text-amber-100/50 */
+  transition: background-color 5000s ease-in-out 0s; /* evita flicker */
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 0.375rem 0.75rem; /* px-3 py-1.5 */
+  outline: 1px solid rgba(255, 255, 255, 0.7); /* outline-white/70 */
+  caret-color: white;
+}
