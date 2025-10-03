@@ -4,7 +4,6 @@ import sys
 def installPackages():
     packageName = [
         "flask",
-        "mysql-connector-python"
     ]
     for i in packageName:
         try:
@@ -15,7 +14,7 @@ installPackages()
 
 import sqlite3 as sqlite
 from flask import Flask
-from db_handler import Sql_Users
+from db_handler.Sql_Users import sqlUsers
 
 app = Flask(__name__)
 
@@ -23,7 +22,7 @@ app = Flask(__name__)
 def hello_world():
     return "<p>Hello, World!</p>"
 
-app.register_blueprint(Sql_Users)
+app.register_blueprint(sqlUsers)
 
 # Inicia Flask
 if __name__ == "__main__":
