@@ -1,8 +1,8 @@
-function LoginWithGoogleButton() {
+function LoginWithGoogleButton(style_text, style) {
     return (
         <button
             aria-label="Sign in with Google"
-            className="flex items-center rounded-2xl p-2 pr-4 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 duration-500 bg-slate-700/30 hover:bg-indigo-500 focus:outline-indigo-500 sm:text-sm/6 transition-colors duration-500'"
+            className= {style ? style : "flex items-center rounded-2xl p-2 pr-4 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 duration-500 bg-slate-700/30 hover:bg-indigo-500 focus:outline-indigo-500 sm:text-sm/6 transition-colors duration-500'"}
         >
             <div className="mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5">
@@ -25,7 +25,7 @@ function LoginWithGoogleButton() {
                     ></path>
                 </svg>
             </div>
-            <span className="text-sm text-gray-100">Entrar com Google</span>
+            <span className={style? style : "text-sm text-gray-100"}>Entrar com Google</span>
         </button>
     );
 }

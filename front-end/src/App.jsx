@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Components
-import UpperNavbar from './Components/navbar/UpperNavbar';
-import DefaultBackground from './Components/background/DefaultBackground';
+import UpperNavbar from './Components/organisms/UpperNavbar';
+import DefaultBackground from './Components/atoms/DefaultBackground';
 
 //pages
-import RegisterCard from './Components/cards/registerCard/RegisterCard';
+import RegisterCard from './Components/molecules/RegisterCard';
 
 function App() {
   return (
