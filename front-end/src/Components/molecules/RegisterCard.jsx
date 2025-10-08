@@ -18,7 +18,7 @@ function RegisterCard() {
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <label className={labelClass}>E-mail</label>
-                        <Form.Control type="e-mail" placeholder="exemplo@email.com" className={inputClass} />
+                        <Form.Control type="e-mail" placeholder="exemple@email.com" className={inputClass} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -34,8 +34,8 @@ function RegisterCard() {
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check
                             type="checkbox"
-                            label="Li e Aceito os Termos de uso."
-                            className="appearance-none checked:border-indigo-500 checked:bg-indigo-500 focus-visible:outline-indigo-500 disabled:bg-white/10"
+                            label=" Li e Aceito os Termos de uso."
+                            className=" appearance-none checked:border-indigo-500 checked:bg-indigo-500 focus-visible:outline-indigo-500 disabled:bg-white/10"
                         />
                     </Form.Group>
 
@@ -49,7 +49,7 @@ function RegisterCard() {
 
                 <br />
                 Já possui uma conta?{" "}
-                <a href="#register" className="hover:text-blue-400 underline">
+                <a href="/" className="hover:text-blue-400 underline">
                     Clique Aqui!
                 </a>
             </div>

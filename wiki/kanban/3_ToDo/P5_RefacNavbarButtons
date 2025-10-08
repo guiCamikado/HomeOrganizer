@@ -1,0 +1,24 @@
+# RegisterSys
+
+    LOG
+        Created: 07-10-2025
+        Doing: 
+        Done:
+
+### Description
+
+    O sistema de Navbar possuí botões atrelados ao mesmo, isso não segue a estrutura de design Atomic por ser um retrabalho técnicamente desnecessário visto que a navbar por sí só muito improvavelmente receberá mais que 5 botões a prioridade é baixa por conta disso...
+
+### To Do List
+
+- [ ] Criar classe de uso geral para get, post.
+    - [ ] Get Done
+    - [ ] Post Done
+
+- [ ] Completar formulário de registro
+    - [ ] Formulário contem todos os campos necessários
+    - [ ] Post do formulário está funcionando
+
+- [ ] Completar formulário de login
+    - [ X ] Formulário contem todos os campos necessários || 07/10/2025
+    - [ ] Post do formulário está funcionando

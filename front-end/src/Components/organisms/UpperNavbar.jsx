@@ -1,10 +1,24 @@
 import { useState } from 'react';
 import LoginCard from '../molecules/LoginCard';
+import NavbarButton from '../atoms/NavbarButton';
 
 function UpperNavbar() {
+
+  const tabItensStuff = {
+    login: {
+      text: "Login",
+      href: "/login"
+    },
+    sobre: {
+      text: "Sobre",
+      href: "/sobre"
+    },
+  }
+
   const [isOpen, setIsOpen] = useState(false);
   const [tabItens, setTabItens] = useState(["Login", "Sobre", "TestAlterar"]);
   const [showLogin, setShowLogin] = useState(false);
+
   return (
     <>
       <div>
@@ -22,6 +36,17 @@ function UpperNavbar() {
               {/* Menu desktop */}
               <div className="hidden md:flex space-x-4">
 
+                {/* {Object.values(tabItens).map((item, index) => (
+                  <NavbarButton
+                    key={index}
+                    text={item.text}
+                    href={item.href}
+                    showLogin={showLogin}
+                    setShowLogin={setShowLogin}
+                    setTabItens={setTabItens}
+                  />
+                ))} */}
+
                 {tabItens.map((item) => (
                   <a
                     key={item}
@@ -31,6 +56,7 @@ function UpperNavbar() {
                         ? "no-underline p-2 rounded-4xl hover:bg-red-800 focus:outline-indigo-500 sm:text-sm/6 transition-colors duration-500 font-bold text-amber-600"
                         : "text-white no-underline p-2 rounded-4xl hover:bg-indigo-500 focus:outline-indigo-500 sm:text-sm/6 transition-colors duration-500 font-bold"
                     }
+
                     onClick={() => {
 
                       if (item === "Login") {
