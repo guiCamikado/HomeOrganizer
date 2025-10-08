@@ -12,18 +12,38 @@ def createTable():
     cur = conn.cursor()
     cur.execute(
     """
-        CREATE TABLE IF NOT EXISTS
-            users(
-                username Text,
-                email Text,
-                password Text,
-                name Text,
-                lastName Text,
-                age Int,
-                firstLogin Text,
-                lastLogin Text
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT NOT NULL UNIQUE,
+            email TEXT NOT NULL UNIQUE,
+            password_hash TEXT NOT NULL,
+            name TEXT,
+            last_name TEXT,
+            age INTEGER,
+            role TEXT DEFAULT 'user',
+            is_active INTEGER DEFAULT 1,  -- 1 = true, 0 = false
+            first_login TEXT,             -- ISO 8601: '2025-10-07 12:34:56'
+            last_login TEXT,
+            failed_login_attempts INTEGER DEFAULT 0,
+            created_at TEXT DEFAULT (DATETIME('now')),
+            updated_at TEXT
+            );
         )"""
     )
+    # cur.execute(
+    # """
+    #     CREATE TABLE IF NOT EXISTS
+    #         users(
+    #             username Text,
+    #             email Text,
+    #             password Text,
+    #             name Text,
+    #             lastName Text,
+    #             age Int,
+    #             firstLogin Text,
+    #             lastLogin Text
+    #     )"""
+    # )
     cur.fetchall()
     cur.close()
     conn.commit()

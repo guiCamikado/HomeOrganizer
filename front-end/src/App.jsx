@@ -9,7 +9,6 @@ import DefaultBackground from './Components/atoms/DefaultBackground';
 
 //pages
 import RegisterCard from './Components/molecules/RegisterCard';
-import ProfilePictureIcon from './Components/atoms/ProfilePictureIcon';
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
         <UpperNavbar />
           {/* <RegisterCard></RegisterCard> */}
         <Routes>
-          <Route path="/testing" element={<ProfilePictureIcon />} />
+          {/* <Route path="/" element={<></>} /> */}
           <Route path="/register" element={<RegisterCard />} />
         </Routes>
       </Router>
