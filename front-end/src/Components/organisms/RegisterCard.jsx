@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import LoginWithGoogle from "../atoms/LoginWithGoogleButton"
+import Request from "../scripts/Request.js"
 
 function RegisterCard() {
     const labelClass = "block text-sm font-medium mb-1";

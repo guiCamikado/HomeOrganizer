@@ -12,58 +12,57 @@ def createTable():
     cur = conn.cursor()
     cur.execute(
     """
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            username TEXT NOT NULL UNIQUE,
-            email TEXT NOT NULL UNIQUE,
-            password_hash TEXT NOT NULL,
-            name TEXT,
-            last_name TEXT,
-            age INTEGER,
-            role TEXT DEFAULT 'user',
-            is_active INTEGER DEFAULT 1,  -- 1 = true, 0 = false
-            first_login TEXT,             -- ISO 8601: '2025-10-07 12:34:56'
-            last_login TEXT,
-            failed_login_attempts INTEGER DEFAULT 0,
-            created_at TEXT DEFAULT (DATETIME('now')),
-            updated_at TEXT
-            );
+        CREATE TABLE IF NOT EXISTS
+            users(
+                username Text,
+                email Text,
+                password Text,
+                name Text,
+                last_name Text,
+                age Int,
+                first_login_date Text,
+                last_login_date Text,
+                failed_login_attempts INTEGER DEFAULT 0
         )"""
     )
-    # cur.execute(
-    # """
-    #     CREATE TABLE IF NOT EXISTS
-    #         users(
-    #             username Text,
-    #             email Text,
-    #             password Text,
-    #             name Text,
-    #             lastName Text,
-    #             age Int,
-    #             firstLogin Text,
-    #             lastLogin Text
-    #     )"""
-    # )
     cur.fetchall()
     cur.close()
     conn.commit()
 
+@sqlUsers.route('/test')
+def test():
+    return "<p>Hello, World2!</p>"
 
-@app.route('/DBAction/newRegisterRequest', methods=['POST'])
+@sqlUsers.route('/DBAction/newRegisterRequest', methods=['POST'])
 def newRegisterRequest():
-    cur = conn.cursor()
+    print("TESTEEEEE")
+    data = request.get_json()
 
-    cur.execute("""INSERT INTO users(username, email, password, name, lastName, age, firstLogin, lastLogin) VALUES (?,?,?,?,?,?,?,?)""",
-        (
-            "Test",
-            "Test@gmail.com",
-            "TestPass",
-            "TestName",
-            "TestLastName",
-            20,
-            "nothing",
-            "nothing"
-        ,)
+    cur = conn.cursor()
+    cur.execute("""
+        INSERT INTO 
+        users(
+            username,
+            email,
+            password,
+            name,
+            last_name,
+            age,
+            first_login_date,
+            last_login_date
+            failed_login_attempts
+        )
+        VALUES (?,?,?,?,?,?,?,?)""",(
+            data.get('username'),
+            data.get('email'),
+            data.get('password'),
+            data.get('name'),
+            data.get('last_name'),
+            data.get('age'),
+            data.get('first_login_date'), # register date
+            data.get('last_login_date'), # last time saw
+            0 #failed_login_attempts
+            )
     )
 
     cur.fetchone()
@@ -72,4 +71,4 @@ def newRegisterRequest():
 
 
 createTable()
-newRegisterRequest()
+# newRegisterRequest()

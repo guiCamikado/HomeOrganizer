@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import LoginCard from '../molecules/LoginCard';
+import LoginCard from './LoginCard';
 import NavbarButton from '../atoms/NavbarButton';
 
 function UpperNavbar() {
