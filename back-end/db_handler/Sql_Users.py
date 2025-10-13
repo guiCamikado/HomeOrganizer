@@ -15,6 +15,7 @@ def createTable():
     cur = conn.cursor()
     cur.execute(
     """
+<<<<<<< HEAD
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT NOT NULL UNIQUE,
@@ -33,9 +34,6 @@ def createTable():
             );"""
     )
     cur = conn.cursor()
-    cur.close()
-    conn.commit()
-
 
 @sqlUsers.route('/DBAction/newRegisterRequest', methods=['POST'])
 def newRegisterRequest():

@@ -4,7 +4,6 @@ import LoginWithGoogle from "../atoms/LoginWithGoogleButton"
 import Request from '../scripts/Request';
 import { useState } from 'react';
 
-
 function RegisterCard() {
     const labelClass = "block text-sm font-medium mb-1";
     const inputClass = "text-amber-100/50 block w-full rounded-md bg-white/5 px-3 py-1.5 text-white outline-1 -outline-offset-1 outline-white/70 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm placeholder-white transition-colors duration-500 placeholder:text-gray-400";
@@ -46,8 +45,6 @@ function RegisterCard() {
             return;
         }
     }
-
-
 
     return (
         <>

@@ -1,5 +1,4 @@
 // JS classes and Archives
-import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -8,7 +7,7 @@ import UpperNavbar from './Components/organisms/UpperNavbar';
 import DefaultBackground from './Components/atoms/DefaultBackground';
 
 //pages
-import RegisterCard from './Components/molecules/RegisterCard';
+import RegisterCard from './Components/organisms/RegisterCard';
 
 function App() {
   return (
