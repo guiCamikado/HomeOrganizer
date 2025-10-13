@@ -1,25 +1,24 @@
 class Request {
-    constructor(parameters) {
-        // Get and Post request classes
-        function getRequest(url) {
-            return fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then(response => response.json());
-        }
+    constructor() {}
 
-        function postRequest(url, data) {
-            return fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            }).then(response => response.json());
-        }
+    async get(url) {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+        return response.json();
+    }
 
+    async post(url, data) {
+        console.log(data);
+        
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+        return response.json();
     }
 }
+
 export default Request;
