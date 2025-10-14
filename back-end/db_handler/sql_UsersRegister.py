@@ -7,7 +7,7 @@ from flask_cors import CORS
 # Todo o CRUD da tabela users deverá ser feito aqui
 
 app = Flask(__name__)
-sqlUsers = Blueprint("sqlUsers", __name__)
+sqlUsersRegis = Blueprint("sqlUsersRegis", __name__)
 
 
 def createTable():   
@@ -15,7 +15,6 @@ def createTable():
     cur = conn.cursor()
     cur.execute(
     """
-<<<<<<< HEAD
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT NOT NULL UNIQUE,
@@ -31,11 +30,11 @@ def createTable():
             failed_login_attempts INTEGER DEFAULT 0,
             created_at TEXT DEFAULT (DATETIME('now')),
             updated_at TEXT
-            );"""
+            )"""
     )
     cur = conn.cursor()
 
-@sqlUsers.route('/DBAction/newRegisterRequest', methods=['POST'])
+@sqlUsersRegis.route('/DBAction/newRegisterRequest', methods=['POST'])
 def newRegisterRequest():
     conn = sql.connect('bancoDeDadosTeste')
     cur = conn.cursor()

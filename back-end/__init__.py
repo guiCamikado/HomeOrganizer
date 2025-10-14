@@ -5,7 +5,8 @@ def installPackages():
     packageName = [
         "flask",
         "flask-cors",
-        "requests"
+        "requests",
+        "pyjwt"
     ]
     for i in packageName:
         try:
@@ -16,7 +17,7 @@ installPackages()
 
 import sqlite3 as sqlite
 from flask import Flask
-from db_handler.Sql_Users import sqlUsers
+from db_handler.sql_UsersRegister import sqlUsersRegis
 from flask_cors import CORS
 
 
@@ -26,7 +27,7 @@ app = Flask(__name__)
 def hello_world():
     return "<p>Hello, World!</p>"
 
-app.register_blueprint(sqlUsers)
+app.register_blueprint(sqlUsersRegis)
 CORS(app)
 
 # Inicia Flask
